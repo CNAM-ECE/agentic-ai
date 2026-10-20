@@ -1,0 +1,14 @@
+agentic-ai
+Copyright 2026 Le Huyen Trang (Hazel)
+
+This repository contains notes written by the repository owner while following
+"Agentic AI – Complete Course for Beginners" (freeCodeCamp.org, taught by
+Boktiar Ahmed Bappy): https://www.youtube.com/watch?v=Zy7EXDONlTY
+
+The code under src/ and the slide / diagram / interview-prep files under
+docs/slides, docs/diagrams and docs/interview-prep are copied from the course
+repository by Boktiar Ahmed Bappy:
+  https://github.com/entbappy/Complete-Agentic-AI-Course
+
+Those files remain the work of their original author. src/04-langchain-multi-agent
+carries its own upstream LICENSE file (Apache 2.0).

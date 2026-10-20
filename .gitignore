@@ -1,0 +1,55 @@
+# Environment & secrets — never commit these
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Agent runtime artifacts (rebuilt on first run)
+faiss_db/
+chroma_db/
+*.faiss
+*.pkl
+.langgraph_api/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+
+# Editors & OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local databases (checkpointers, chat history)
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
