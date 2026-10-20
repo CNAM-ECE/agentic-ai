@@ -5,9 +5,9 @@
 ## Definition
 
 > [!IMPORTANT]
-> **Agentic AI** is AI that takes a task or goal from a user and works toward completing it **on its own, with minimal human guidance**. It plans, takes actions, adapts to change, and **asks for help only when necessary**.
+> **Agentic AI** is a type of AI that can take up a task or goal from a user and work toward completing it **on its own, with minimal human guidance**. It plans, takes actions, adapts to change, and **asks for help only when necessary**.
 
-Examples you already use: ChatGPT with web search, Claude Desktop, Cursor, Antigravity. Given *"create a car-racing game in Python"*, they draft a **plan**, show it for review, execute it step by step, and pause to ask permission (`pip install …?`) before risky actions.
+Examples you already use: ChatGPT with web search, Claude Desktop, Cursor, Antigravity. Given *"create a car-racing game in Python"*, they draft a **plan**, show it for review, execute it step by step, and pause to ask permission (`pip install ...`) before risky actions.
 
 ---
 
@@ -15,10 +15,10 @@ Examples you already use: ChatGPT with web search, Claude Desktop, Cursor, Antig
 
 ```mermaid
 flowchart LR
-    U(["Prompt"]) --> LLM["LLM<br/>(GPT · Llama · Gemini · Mistral)"] --> R(["Response"])
+    U(["Prompt"]) --> Generative AI["LLM<br/>(GPT · Llama · Gemini · Mistral)"] --> R(["Response"])
 ```
 
-Used for text generation, translation, summarization and chat. Later models added multimodal output (images).
+LLM is used for text generation, translation, summarization and chat. Later models added multimodal output (images).
 
 **Limitation: knowledge cutoff.** A model only knows the data it was trained on. For example, GPT-4.1 lists a cutoff of *1 Jan 2024*, so anything after that date is unknown to it.
 
@@ -51,7 +51,7 @@ If the answer is inside the model's knowledge, the LLM replies directly. Otherwi
 ```mermaid
 flowchart LR
     U(["User"]) --> A["Agent<br/><i>LLM as the brain</i>"]
-    A -->|"needs fresh data?"| T1["Web search"]
+    A -->|"Question asking (needs fresh data?)"| T1["Web search"]
     A --> T2["Calendar / Drive"]
     A --> T3["Storage / APIs"]
     T1 & T2 & T3 --> A

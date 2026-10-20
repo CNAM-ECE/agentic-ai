@@ -1,8 +1,6 @@
 # 00 · Introduction & Planning
 
-> **Video:** [00:00:00](https://www.youtube.com/watch?v=Zy7EXDONlTY&t=0s) · **Code:** none
-
-## Why agentic AI
+## Agentic AI introduction
 
 The previous generation of GenAI apps (LLM chat, RAG) answered a prompt and stopped. An **agent** takes a prompt as a *goal*, breaks it into tasks, and finishes those tasks by **choosing its own tools**. The workflow is automated end to end, and a human only steps in where needed.
 
