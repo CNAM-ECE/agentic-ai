@@ -1,0 +1,11 @@
+langchain-core
+langchain-groq
+langchain-huggingface
+langchain-pinecone
+groq
+pinecone
+sentence-transformers
+pymupdf
+pillow
+pandas
+python-dotenv
