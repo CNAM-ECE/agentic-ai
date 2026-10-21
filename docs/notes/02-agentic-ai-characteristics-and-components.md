@@ -1,7 +1,5 @@
 # 02 · Agentic AI: Core Characteristics & Components
 
-> **Video:** [00:41:26](https://www.youtube.com/watch?v=Zy7EXDONlTY&t=2486s) · **Code:** none
-
 ## Worked example: an AI recruiter
 
 **Prompt:** *"I want to hire a backend engineer with 2–4 years of experience."*
@@ -33,7 +31,7 @@ flowchart TB
 
 | Characteristic | Meaning | In the recruiter |
 |---|---|---|
-| **Autonomy** | Decides and acts toward the goal without step-by-step prompting | Posts, monitors and re-posts on its own |
+| **Autonomous** | Decides and acts toward the goal without step-by-step prompting | Posts, monitors and re-posts on its own |
 | **Goal-oriented** | Holds a persistent objective, not isolated prompts | "Hire backend engineer" steers every step |
 | **Planning** | Breaks a high-level goal into ordered sub-goals | JD → post → monitor → screen → interview → offer |
 | **Reasoning** | The LLM interprets information, makes decisions, picks tools | Uses the LinkedIn API to post, *not* the calendar |
@@ -53,7 +51,7 @@ flowchart TB
 > **Unchecked autonomy is dangerous.** It can send offers with the wrong salary, shortlist by age or nationality (breaking anti-discrimination law), or overspend on ads that are no longer needed.
 
 ### Goal-oriented: goals live in core memory
-
+AI system operates with a persistent objective mind and continously directs its actions to achieve that objective, rather than just responding to isolated prompts.
 The goal acts as the **compass** for autonomy. It is persisted (framework-specific, but conceptually like this) so the agent can resume:
 
 ```json
@@ -72,23 +70,44 @@ The goal acts as the **compass** for autonomy. It is persisted (framework-specif
 ```
 
 ### Planning: generate, evaluate, select
-
+Planning is the agent's ability to break down a high-level goal into a structured sequence of actions/subgoals and decide the best plan to achieve the desired outcome.
 1. **Generate candidate plans.** Plan A: post on LinkedIn / GitHub Jobs / AngelList. Plan B: internal referrals plus hiring agencies.
 2. **Evaluate** on efficiency (which is faster), cost, risk (*what if nobody applies?*) and constraint alignment (remote only, budget).
 3. **Select** with HITL, or with a pre-programmed policy such as *"prefer low-cost channels first"*.
 
 ### Reasoning: while planning *and* while executing
-
+Reasoning is the cognitive process through which an agentic AI system interprets info, draws conclusion, and make decisions (both while planning ahead while executing actions in real time).
 | During planning | During execution |
 |---|---|
-| Goal decomposition | Decision making (interview 2 of the 3 matches, reject 1) |
-| Tool selection | HITL handling: knowing *when* to ask ("unsure about salary range") |
-| Estimating time, dependencies, risk | Error handling: tool / API failure, then fall back to another tool |
+| Goal decomposition (break down abstract goals into concrete step) | Decision making (interview 2 of the 3 matches, reject 1) |
+| Tool selection (decide which tool need for which step) | HITL handling: knowing *when* to ask ("unsure about salary range") |
+| Estimating time, dependencies, risk (ressource estimation) | Error handling: tool / API failure, then fall back to another tool |
 
 > [!IMPORTANT]
 > **Reasoning is the line between a chatbot and an agent.** The LLM decides for each input: *answer directly, or call a tool?*
 
-### Context awareness = memory
+### Adaptability
+Agent's ability to modify its plan, strategies, or actions in respone to unexpected conditions (all while staying aligned with the goal).
+1. **Failure.** (Calendar API).
+2. **External feedback** (Less none of applications).
+3. **Changing goals** (Hiring a freelancer).
+
+### Context awareness
+Agent's ability to understand, retain, and utilize relevant information from the ongoing task, past interactions, user preferences, and environmental cues to make better decisions throughout a multi-step process.
+
+**Types of context**
+
+| Context | Example (AI recruiter) |
+|---|---|
+| **The original goal** | Hire a remote backend engineer, 2–4 yrs |
+| **Progress till now + interaction history** | JD was finalized and posted to LinkedIn & GitHub Jobs |
+| **Environment state** | Number of applicants so far = 8, or LinkedIn promotion ends in 2 days |
+| **Tool responses** | Resume parser → *"Candidate B has 3 years Django + AWS experience"*, or Calendar API → *"No conflicts at 2 PM Wednesday"* |
+| **User-specific preferences** | Prefers remote-first candidates, or likes receiving interview questions in a Google Doc |
+| **Policy or guardrails** | Do not send an offer without explicit user approval, or never use platforms that require paid ads unless approved |
+
+> [!IMPORTANT]
+> **Context awareness is implemented through memory**, split into **short-term** and **long-term** memory.
 
 | Memory | Holds |
 |---|---|

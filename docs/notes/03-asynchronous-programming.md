@@ -1,8 +1,6 @@
 # 03 · Asynchronous Programming for AI Agents
 
-> **Video:** [01:33:18](https://www.youtube.com/watch?v=Zy7EXDONlTY&t=5598s) · **Code:** [`src/01-async-programming/`](../../src/01-async-programming/) · **Slides:** [`docs/slides/03-asynchronous-programming.pdf`](../slides/03-asynchronous-programming.pdf)
-
-## Why agents need it
+## The reason of agents need asynchronization
 
 Every orchestrator framework is **async at its core**, although each models orchestration differently:
 
